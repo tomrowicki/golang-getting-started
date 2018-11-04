@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func main() {
+	var name string
+	var address string
+	fmt.Printf("State your name:\n")
+	fmt.Scan(&name)
+	fmt.Printf("State your address:\n")
+	fmt.Scan(&address)
+
+	fmt.Printf(name + " " + address)
+}

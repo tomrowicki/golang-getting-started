@@ -1,0 +1,10 @@
+package main
+import "fmt"
+import "strings"
+
+func main() {
+     var providedString string
+     fmt.Printf("Provide a string:")
+     fmt.Scan(&providedString)
+     fmt.Printf("Lowercased String: %s", strings.ToLower(providedString)
+}

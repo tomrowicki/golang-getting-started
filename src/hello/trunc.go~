@@ -1,0 +1,13 @@
+package main
+import "fmt"
+import "Strconv"
+
+func main() {
+     // TODO pobranie wartości ze skanera
+     var floatInput float32
+     fmt.Printf("Specify a decimal number:\n")
+     fmt.Scan(&floatInput)
+     fmt.Printf("Number specified: %f%", int32(floatInput))
+     // TODO przetworzenie wartości
+     // TODO druk wartości przetworzonej
+}

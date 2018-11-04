@@ -1,0 +1,41 @@
+package main
+
+import "fmt"
+import "bufio"
+import "os"
+
+func main() {
+	var fileNameInput string
+
+	fmt.Printf("Provide the name of the file with names:\n")
+	fmt.Scan(&fileNameInput)
+	file, _ := os.Open(fileNameInput)
+	reader := bufio.NewReader(file)
+	line, error := Readln(reader)
+	for error == nil {
+		fmt.Println(line) // zamiast tego tworzyć structa i dodawać do slice'a
+		line, error = Readln(reader)
+	}
+}
+
+type Name struct {
+	fname string
+	lname string
+}
+
+// Readln returns a single line (without the ending \n)
+// from the input buffered reader.
+// An error is returned iff there is an error with the
+// buffered reader.
+func Readln(r *bufio.Reader) (string, error) {
+	var (
+		isPrefix bool  = true
+		err      error = nil
+		line, ln []byte
+	)
+	for isPrefix && err == nil {
+		line, isPrefix, err = r.ReadLine()
+		ln = append(ln, line...)
+	}
+	return string(ln), err
+}
